@@ -26,7 +26,7 @@ const changeHandler = (e) =>{
   let formData = new FormData() ;
   formData.append('product',image) ;
    
-  await fetch('http://localhost:4000/upload',{
+  await fetch('https://projectfinal-rqo1.onrender.com/upload',{
     method : 'POST',
     headers : {
       Accept : 'application/json'
@@ -38,7 +38,7 @@ const changeHandler = (e) =>{
   {
     product.image = responseData.image_url ;
     console.log(product);
-    await fetch('http://localhost:4000/addproduct',{
+    await fetch('https://projectfinal-rqo1.onrender.com/addproduct',{
       method : 'POST',
       headers : {
         Accept : 'application/json',
@@ -60,7 +60,7 @@ const changeHandler = (e) =>{
   //  console.log(formData) ;
     //formData.append('image', image); // Assuming 'image' is a file object
 
-    const imageResponse = await fetch('http://localhost:4000/upload', {
+    const imageResponse = await fetch('https://projectfinal-rqo1.onrender.com/upload', {
       method: 'POST',
       body: image
     });
@@ -75,7 +75,7 @@ const changeHandler = (e) =>{
     // Product Addition
     const product = { ...productDetails, image: imageData.image_url }; // Spread operator for product details and add image URL
 
-    const productResponse = await fetch('http://localhost:4000/addproduct', {
+    const productResponse = await fetch('https://projectfinal-rqo1.onrender.com/addproduct', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

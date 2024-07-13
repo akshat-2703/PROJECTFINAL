@@ -18,7 +18,7 @@ const LoginSignup = () => {
  const login = async () =>{
    console.log("Login Function Executed",formData) ;
    let responseData ;
-await fetch('http://localhost:4000/login',{
+await fetch('https://projectfinal-rqo1.onrender.com/login',{
   method:'POST',
   headers:{
     Accept:'application/form-data',
@@ -39,7 +39,7 @@ await fetch('http://localhost:4000/login',{
   console.log("Login Function Executed", formData);
 
   try {
-    const response = await fetch('http://localhost:4000/login', {
+    const response = await fetch('https://projectfinal-rqo1.onrender.com/login', {
       method: 'POST',
     /*  headers: {
         Accept: 'application/json', // Corrected header for JSON data
@@ -74,7 +74,7 @@ await fetch('http://localhost:4000/login',{
  const signup = async () =>{
 console.log("SignUp Function Executed",formData) ;
 let responseData ;
-await fetch('http://localhost:4000/signup',{
+await fetch('https://projectfinal-rqo1.onrender.com/signup',{
   method:'POST',
   headers:{
     Accept:'application/form-data',
