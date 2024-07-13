@@ -12,6 +12,7 @@ const { type } = require("os");
 const e = require("express");
 
 app.use(express.static(path.resolve(__dirname, "../frontend/build")));
+app.use(express.static(path.resolve(__dirname, "../admin/dist")));
 
 app.use(express.json()) ; //whatever action that we use that will transmit to json
 app.use(cors()) ;
@@ -261,10 +262,16 @@ app.post('/removefromcart',fetchUser,async (req,res) =>{
 })
 
 //creating endpoint to get cartdata
+
 app.post('/getcart',fetchUser,async (req,res)=>{
   console.log("GetCart");
   let userData = await Users.findOne({_id:req.user.id}) ;
   res.json(userData.cartData) ;
+})
+
+app.get("/admin", (req, res)=>{
+    console.log(path.resolve(__dirname, "../admin/dist", "index.html"));
+    res.sendFile(path.resolve(__dirname, "../admin/dist", "index.html"));
 })
 
 app.get("*", (req, res)=>{

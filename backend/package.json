@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "backend-build": "npm install",
 "frontend-build": "cd ../frontend && npm install && npm run build",
-"build-all": "npm run backend-build && npm run frontend-build"
+"admin-build": "cd ../admin && npm install && npm run build",
+"build-all": "npm run backend-build && npm run frontend-build && npm run admin-build"
   },
   "author": "",
   "license": "ISC",
