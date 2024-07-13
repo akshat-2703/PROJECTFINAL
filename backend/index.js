@@ -49,7 +49,7 @@ app.post('/upload', upload.single('product'), (req, res) => {
       // You can access the uploaded file details in req.file object (e.g., filename, size)
       res.json({
         success:1,
-        image_url:`http://localhost:${port}/images/${req.file.filename}`
+        image_url:`https://projectfinal-rqo1.onrender.com/images/${req.file.filename}`
     })
     } else {
       console.error('Error uploading file!');
