@@ -11,6 +11,8 @@ const { log, error } = require("console");
 const { type } = require("os");
 const e = require("express");
 
+app.use(express.static(path.resolve(__dirname, "../frontend/build")));
+
 app.use(express.json()) ; //whatever action that we use that will transmit to json
 app.use(cors()) ;
 
@@ -263,6 +265,10 @@ app.post('/getcart',fetchUser,async (req,res)=>{
   console.log("GetCart");
   let userData = await Users.findOne({_id:req.user.id}) ;
   res.json(userData.cartData) ;
+})
+
+app.get("*", (req, res)=>{
+    res.sendFile(path.resolve(__dirname, "../frontend/build", "index.html"));
 })
 
 app.listen(port,(error)=>{
