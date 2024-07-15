@@ -13,7 +13,7 @@ const e = require("express");
 
 app.use(express.static(path.resolve(__dirname, "../frontend/build")));
 app.use(express.static(path.resolve(__dirname, "../admin/dist")));
-app.use(express.static(path.resolve(__dirname, "./upload"))) ;
+app.use(express.static(path.resolve(__dirname, "./upload/images"))) ;
 
 app.use(express.json()) ; //whatever action that we use that will transmit to json
 app.use(cors()) ;
